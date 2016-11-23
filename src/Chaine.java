@@ -20,6 +20,19 @@ public class Chaine {
 		}
 	}
 	
+	public Chaine(Chaine ch){
+		Element e = ch.tete;
+		if(e!=null){
+			this.tete = new Element(e.getChar());
+			Element courant = this.tete;
+			while(e.hasNext()){
+				e = e.getNext();
+				courant.addNext(new Element(e.getChar()));
+				courant = courant.getNext();
+			}
+		}else this.tete = null;
+	}
+	
 	public boolean estVide(){
 		
 		return tete == null;
@@ -53,6 +66,14 @@ public class Chaine {
 	
 	public Element getTete(){
 		return this.tete;
+	}
+	
+	public void adjq(char car){
+		Element e = this.tete;
+		while(e.hasNext()){
+			e = e.getNext();
+		}
+		e.addNext(new Element(car));
 	}
 	
 	@Override
