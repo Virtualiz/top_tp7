@@ -5,8 +5,9 @@ import org.junit.Test;
 public class ElementTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testConstructor() {		
+		Element elm = new Element('L');
+		assertTrue(elm.getChar() == 'L');
 	}
 
 }
