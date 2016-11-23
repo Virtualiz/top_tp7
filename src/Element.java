@@ -50,4 +50,14 @@ public class Element {
 		return true;
 	}
 	
+	public Element retourneV2() {
+		if(!this.hasNext()){
+			return this;
+		}else{
+			Element res = this.next.retourneV2();
+			
+		}
+		
+	}
+	
 }
