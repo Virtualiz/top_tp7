@@ -19,6 +19,10 @@ public class Element {
 	public Element getNext() {
 		return next;
 	}
+	
+	public boolean hasNext(){
+		return (next != null);
+	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)

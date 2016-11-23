@@ -21,22 +21,34 @@ public class Chaine {
 	}
 	
 	public boolean estVide(){
-		System.out.println("Not yet implemeted !");
-		return false;
+		
+		return tete == null;
 	}
 	
 	public char premier(){
-		System.out.println("Not yet implemeted !");
-		return (Character) null;
+		char res;
+		try{
+			res = tete.getChar();
+		}catch(Exception e){
+			throw e;
+		}
+		return res;
 	}
 	
 	public Chaine reste(){
-		System.out.println("Not yet implemeted !");
-		return null;
+		Chaine reste = new Chaine();
+		try{
+			reste.tete = this.tete.getNext();
+		}catch(Exception e){
+			throw e;
+		}
+		return reste;
 	}
 	
-	public void adjt(){
-		System.out.println("Not yet implemeted !");
+	public void adjt(char car){
+		Element e = new Element(car);
+		e.addNext(this.tete);
+		this.tete = e;
 	}
 	
 	public Element getTete(){
