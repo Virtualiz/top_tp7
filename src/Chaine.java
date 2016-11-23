@@ -27,6 +27,10 @@ public class Chaine {
 		}else this.tete = null;
 	}
 	
+	public Chaine(Element e){
+		this.tete = e;
+	}
+	
 	public boolean estVide(){
 		
 		return tete == null;
@@ -72,7 +76,14 @@ public class Chaine {
 	
 	public void supp(char car){
 		Element e = this.tete;
-		
+		if(e != null){
+			if(e.getChar()==car){
+				this.tete = e.getNext();
+			}else{
+				Chaine ch = new Chaine(e.getNext());
+				this.tete.addNext(ch.getTete());
+			}
+		}
 	}
 	
 	@Override
