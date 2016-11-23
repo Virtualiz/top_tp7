@@ -39,5 +39,22 @@ public class Chaine {
 		System.out.println("Not yet implemeted !");
 	}
 	
+	public Element getTete(){
+		return this.tete;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Chaine other = (Chaine) obj;
+		if (tete != other.tete)
+			return false;
+		return true;
+	}
 	
 }
