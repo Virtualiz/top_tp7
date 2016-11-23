@@ -21,15 +21,9 @@ public class Chaine {
 	}
 	
 	public Chaine(Chaine ch){
-		Element e = ch.tete;
-		if(e!=null){
-			this.tete = new Element(e.getChar());
-			Element courant = this.tete;
-			while(e.hasNext()){
-				e = e.getNext();
-				courant.addNext(new Element(e.getChar()));
-				courant = courant.getNext();
-			}
+		if(!ch.estVide()){
+			this.tete = new Element(ch.getTete());
+			
 		}else this.tete = null;
 	}
 	
@@ -74,6 +68,11 @@ public class Chaine {
 			e = e.getNext();
 		}
 		e.addNext(new Element(car));
+	}
+	
+	public void supp(char car){
+		Element e = this.tete;
+		
 	}
 	
 	@Override

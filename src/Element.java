@@ -8,6 +8,15 @@ public class Element {
 		next = null;
 	}
 	
+	public Element(Element other){
+		if(other != null){
+			this.c = other.getChar();
+			if(other.hasNext()){
+				this.next = new Element(other.getNext());
+			}else this.next = null;
+		}
+	}
+	
 	public void addNext(Element e){
 		this.next = e;
 	}
