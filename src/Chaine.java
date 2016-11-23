@@ -80,10 +80,20 @@ public class Chaine {
 			if(e.getChar()==car){
 				this.tete = e.getNext();
 			}else{
-				Chaine ch = new Chaine(e.getNext());
+				Chaine ch = this.reste();
 				this.tete.addNext(ch.getTete());
 			}
 		}
+	}
+	
+	public Chaine retourne(){
+		Chaine tmp = new Chaine(this);
+		Chaine res = new Chaine();
+		while(!tmp.estVide()){
+			res.adjq(tmp.premier());
+			tmp = tmp.reste();
+		}
+		return res;
 	}
 	
 	@Override
